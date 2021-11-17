@@ -19,6 +19,11 @@ func main() {
 				cli.StringFlag{Name: "username", Usage: "--username"},
 			},
 		},
+		{
+			Name:   "procget",
+			Action: (&cmd.Command{}).GetProcessInfo,
+			Flags:  []cli.Flag{},
+		},
 	}
 	err := app.Run(os.Args)
 	if err != nil {
